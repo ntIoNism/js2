@@ -6,7 +6,7 @@ let btnCancelar = document.querySelector("#btnCancelar");
 let lista = document.querySelector(".listaAmigos");
 let formulario = document.querySelector("#formulario");
 let found;
-
+// let arreglofor=Array.from(formulario);
 
 // pintar();
 
@@ -84,17 +84,32 @@ btnGuardar.addEventListener("click", (event) => {
             return prueba;
         }
     })
+
     console.log(found);
     if (found) {
         mal.innerHTML = "Numero repetido"
         mal.classList.remove("oculto");
     }
     else {
+        // arreglofor=formulario.some(nombre=>{
+        //     if(contacto.nombre=formulario[0].value="")
+        //     console.log(formulario)
+        // });
         amigos.push(contacto);
         limpiar();
         pintar();
 
         console.log("NO hay alguien con ese telefono");
     }
+
     event.preventDefault();
+    // correo = document.getElementById("correo");
+
+    // correo.addEventListener("correo", function (event) {
+    //     if (correo.validity.typeMismatch) {
+    //         correo.setCustomValidity("¡Se esperaba una dirección de correo electrónico!");
+    //     } else {
+    //         correo.setCustomValidity("");
+    //     }
+    // });
 })
